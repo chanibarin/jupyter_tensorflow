@@ -6,11 +6,10 @@ RUN yum -y install epel-release && \
     yum -y install python-devel python-pip lapack-devel freetype-devel \
            libpng-devel libjpeg-turbo-devel ImageMagick
 RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
-RUN sudo easy_install requests
 RUN pip install pandas scipy jupyter && \
     pip install scikit-learn matplotlib Pillow && \
     pip install google-api-python-client && \
-    pip install requests grequests
+    pip install grequests
 RUN cd /etc/yum.repos.d && \
     curl -LO http://www.graphviz.org/graphviz-rhel.repo && \
     cd /tmp && \
